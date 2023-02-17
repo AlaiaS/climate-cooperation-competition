@@ -62,6 +62,7 @@ class Rice:
 
     def __init__(
         self,
+        # the number of discrete levels for actions can be increased to add complexity
         num_discrete_action_levels=10,  # the number of discrete levels for actions, > 1
         negotiation_on=False,  # If True then negotiation is on, else off
     ):
@@ -82,8 +83,8 @@ class Rice:
         self.balance_interest_rate = 0.1
 
         self.num_regions = num_regions
-        self.rice_constant = params["_RICE_CONSTANT"]
-        self.dice_constant = params["_DICE_CONSTANT"]
+        self.rice_constant = params["_RICE_CONSTANT"] #in region_yamls
+        self.dice_constant = params["_DICE_CONSTANT"] #in region_yamls
         self.all_constants = self.concatenate_world_and_regional_params(
             self.dice_constant, self.rice_constant
         )
